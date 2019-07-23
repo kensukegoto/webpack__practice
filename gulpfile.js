@@ -1,4 +1,6 @@
 const gulp = require("gulp");
+const notify = require('gulp-notify');
+const plumber = require('gulp-plumber');
 // webpack
 const webpackStream = require("webpack-stream");
 const webpack = require("webpack");
@@ -6,7 +8,10 @@ const webpackConfig = require("./webpack.config"); // webpackの設定ファイ�
 
 function bundleJs(mode){
 
-  return webpackStream(webpackConfig(mode), webpack)
+  return plumber({
+      errorHandler: notify.onError('<%= error.message %>'),
+    })
+    .pipe(webpackStream(webpackConfig(mode), webpack))
     .pipe(gulp.dest('./dist/'));
 
 }

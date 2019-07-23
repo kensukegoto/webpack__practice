@@ -11,11 +11,11 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^4.0.2",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
     "regenerator-runtime": "^0.13.3",
     "webpack": "^4.36.1",
-    "webpack-stream": "^5.2.1"
-  },
-  "dependencies": {
+    "webpack-stream": "^5.2.1",
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
     "babel-loader": "^8.0.6",
